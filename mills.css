@@ -8,6 +8,21 @@
   font-family: 'Crimson Text', serif;
 }
 
+html {
+  overflow-x: hidden;
+}
+
+body {
+  width: 100vw;
+  height: 100%;
+  background-color: #f5e9d5;
+}
+
+:root {
+  font-size: 16px;
+}
+
+
 h1,
 h2,
 h3,
@@ -32,8 +47,8 @@ p {
 
 h1 { font-size: 4rem; }
 h2 { font-size: 3.5rem; }
-h3 { font-size: 3rem; }
-h4 { font-size: 2rem; }
+h3 { font-size: 2.25rem; }
+h4 { font-size: 2.10rem; }
 h5 { font-size: 1.75rem; }
 h6 { font-size: 1.5rem; }
 
@@ -54,11 +69,7 @@ ul {
 
 a {
   text-decoration: none;
-}
-
-body {
-  height: 100vh;
-  background-color: #f5e9d5;
+  color: #f5e9d5;
 }
 
 main {
@@ -67,20 +78,36 @@ main {
   padding: 3vw 0 0 0;
 }
 
-:root {
-  font-size: 18px;
+/* icons */
+
+.fab,
+.fas {
+  padding: 0 5px;
+  transition: transform .3s;
 }
+
+.fab:hover,
+.fas:hover {
+  transform: scale(1.15);
+  color: #982400;
+  cursor: pointer;
+}
+
+/* =========================
+        FOOTER
+===========================*/
 
 footer {
   color: #f5e9d5;
-  background: rgba(68, 119, 4, 0.85);
-  text-align: center;
+  text-align: left;
+  padding: 3vw;
+  background-image: url("images/footerimage2.jpg");
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position: center right;
+  background-attachment: fixed;
 }
 
-.footer-parent {
-  width: 80%;
-  margin: auto;
-}
 
 /* =========================
         NAVIGATION BAR
@@ -90,12 +117,12 @@ header {
   background: rgba(68, 119, 4, 0.75);
   position: fixed;
   z-index: 1000;
-  width: 100%;
+  width: 100vw;
   text-align: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 115px;
+  min-height: 100px;
 }
 
 .logo {
@@ -150,13 +177,13 @@ nav a {
   font-size: 1.75rem;
   display: block;
   padding: 10px;
-  padding-right: 4vw;
+  padding-right: 75px;
   opacity: 0;
 }
 
 nav ul li a {
   transition-property: color, background-color;
-  transition-duration: 1s;
+  transition-duration: .5s;
 }
 
 nav ul li a:hover {
@@ -166,7 +193,7 @@ nav ul li a:hover {
 }
 
 .nav-toggle:checked ~ nav {
-  transform: scale(1,1);
+  transform: scale(1.1);
 }
 
 .nav-toggle:checked ~ nav a {
@@ -174,24 +201,25 @@ nav ul li a:hover {
   transition: opacity 300ms ease-in-out 250ms;
 }
 
-.non-home-pages {
-  height: 50vh;
-}
-
 /* =========================
           HOME PAGE
 ===========================*/
 
-.pastureHome {
-  height: 100vh;
-  background-image: url(images/herd.jpg);
-  background-size: cover; /* Resizes the background image to cover the entire container, even if it has to stretch the image or cut a little bit off one of the edges */
-  background-position: center;
+.video-container {
+  height: 50vh;
+}
+
+.video-container video {
+  display: none;
+}
+
+.video-container img {
+  height: 100%;
 }
 
 .pasture {
-  height: 50vh;
-  background-image: url(images/wheat.jpg);
+  height: 75vh;
+  background-image: url(images/cows.jpg);
   background-size: cover; /* Resizes the background image to cover the entire container, even if it has to stretch the image or cut a little bit off one of the edges */
   background-position: center;
 }
@@ -209,17 +237,20 @@ nav ul li a:hover {
   min-width: 15rem;
   height: 15rem;
   margin: 1rem;
+  box-shadow: 10px 10px 10px solid black;
   border-radius: 50%;
+  box-shadow: 15px 20px 50px grey;
   position: relative;
   -webkit-transition: all 1s ease; /* Safari and Chrome */
-  -moz-transition: all 1s ease; /* Firefox */
-  -o-transition: all 1s ease; /* IE 9 */
-  -ms-transition: all 1s ease; /* Opera */
-  transition: all 1s ease;
+  -moz-transition: all .5s ease; /* Firefox */
+  -o-transition: all .5s ease; /* IE 9 */
+  -ms-transition: all .5s ease; /* Opera */
+  transition: all .5s ease;
 }
 
 .circle1:hover  {
   background-color: rgba(2, 4, 1);
+  box-shadow: 30px 30px 70px grey;
   -webkit-transform: scale(1.15);
   -moz-transform: scale(1.15);
   -ms-transform: scale(1.15);
@@ -233,16 +264,18 @@ nav ul li a:hover {
   height: 15rem;
   margin: 1rem;
   border-radius: 50%;
+  box-shadow: 15px 20px 50px grey;
   position: relative;
-  -webkit-transition: all 1s ease; /* Safari and Chrome */
-  -moz-transition: all 1s ease; /* Firefox */
-  -o-transition: all 1s ease; /* IE 9 */
-  -ms-transition: all 1s ease; /* Opera */
-  transition: all 1s ease;
+  -webkit-transition: all .5s ease; /* Safari and Chrome */
+  -moz-transition: all .5s ease; /* Firefox */
+  -o-transition: all .5s ease; /* IE 9 */
+  -ms-transition: all .5s ease; /* Opera */
+  transition: all .5s ease;
 }
 
 .circle2:hover {
   background-color: rgba(68, 119, 4);
+  box-shadow: 30px 30px 70px grey;
   -webkit-transform: scale(1.15);
   -moz-transform: scale(1.15);
   -ms-transform: scale(1.15);
@@ -259,16 +292,18 @@ nav ul li a:hover {
   height: 15rem;
   margin: 1rem;
   border-radius: 50%;
+  box-shadow: 15px 20px 50px grey;
   position: relative;
-  -webkit-transition: all 1s ease; /* Safari and Chrome */
-  -moz-transition: all 1s ease; /* Firefox */
-  -o-transition: all 1s ease; /* IE 9 */
-  -ms-transition: all 1s ease; /* Opera */
-  transition: all 1s ease;
+  -webkit-transition: all .5s ease; /* Safari and Chrome */
+  -moz-transition: all .5s ease; /* Firefox */
+  -o-transition: all .5s ease; /* IE 9 */
+  -ms-transition: all .5s ease; /* Opera */
+  transition: all .5s ease;
 }
 
 .circle3:hover {
   -webkit-transform: scale(1.15);
+  box-shadow: 30px 30px 70px grey;
   -moz-transform: scale(1.15);
   -ms-transform: scale(1.15);
   -o-transform: scale(1.15);
@@ -289,17 +324,6 @@ nav ul li a:hover {
 }
 
 
-
-/* The dots/bullets/indicators */
-.dot {
-  height: 15px;
-  width: 15px;
-  margin: 20px 3px;
-  background-color: rgba(68, 119, 4, 0.55);
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
 
 /* Fading animation */
 .fade {
@@ -323,9 +347,122 @@ nav ul li a:hover {
   to {opacity: 1}
 }
 
+
+
+.main-message-parent {
+  background-color: #f5e9d5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4vw 0;
+}
+
+.main-message {
+  font-family: 'Nothing You Could Do', cursive;
+  text-align: center;
+  color: #447604;
+}
+
+
+
+.secondary-message-parent {
+  background: rgba(68, 119, 4, 0.85);
+  text-align: center;
+  color: #f5e9d5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10vw 5vw 10vw;
+}
+
+.cream {
+  color: #f5e9d5;
+}
+
+
+
+/* SLIDESHOW */
+
+.mySlides {
+  display: none;
+}
+
+/* .slide-show-container img {
+  vertical-align: middle;
+} */
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides img {
+  height: 350px;
+  width: auto;
+  object-fit: cover; /*this crops the photos to keep dimensions */
+}
+
+
+
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* end of slideshow */
+
+.tertiary-message-parent {
+  padding: 0 10vw 5vw 10vw;
+  background-color: #f5e9d5;
+  text-align: center;
+}
+
+.fading {
+  animation: fade 2s linear;
+}
+
+@keyframes fading {
+  0% { opacity: 0;}
+  100% { opacity: 1;}
+}
+
+#dot_indicator {
+  display: none;
+}
+
+
 /* =========================
           CONTACT
 ===========================*/
+
+.contactAndAbout-image {
+  height: 50vh;
+  background-attachment: fixed;
+}
+
+.contactAndAbout-image img {
+  height: 100%;
+  width: 100%;
+  object-position: bottom;
+  object-fit: cover;
+}
 
 .contactWrapper {
   padding: 0 5vw 5vw 5vw;
@@ -394,23 +531,24 @@ button {
   padding: 1rem 2rem;
   color: #f5e9d5;
   font-family: 'Nothing You Could Do', cursive;
-  background-color: rgba(93, 48, 12, 0.78);
+  background-color: rgba(93, 48, 12);
+  border: 4px solid rgba(93, 48, 12);
   border-radius: 30px;
   cursor: pointer;
   font-weight: 900;
-  border: none;
-  -webkit-transition-duration: 1s;
-  -moz-transition-duration: 1s;
-  -o-transition-duration: 1s;
-  transition-duration: 1s;
+  -webkit-transition-duration: .5s;
+  -moz-transition-duration: .5s;
+  -o-transition-duration: .5s;
+  transition-duration: .5s;
 }
 
 button:hover {
-  background-color: rgba(93, 48, 12, 0.95);
-  font-size: 1.1rem;
-  -ms-transform: scale(1.1); /* IE 9 */
-  -webkit-transform: scale(1.1); /* Safari 3-8 */
-  transform: scale(1.1);
+  color: rgba(93, 48, 12);
+  background-color: #f5e9d5;
+  border: 4px solid rgba(93, 48, 12);
+  -ms-transform: scaleX(1.1); /* IE 9 */
+  -webkit-transform: scaleX(1.1); /* Safari 3-8 */
+  transform: scaleX(1.1);
 }
 
 .button {
@@ -422,11 +560,7 @@ textarea:focus {
   border: 4px solid #291906;
 }
 
-.submitNotification {
-  color: #f5e9d5;
-  font-family: 'Nothing You Could Do', cursive;
-  font-size: 1.5rem;
-}
+
 
 /* Google Maps and Facebook */
 
@@ -445,131 +579,6 @@ textarea:focus {
 }
 
 
-/* =========================
-      OUR PRODUCT
-===========================*/
-
-
-.main-message-parent {
-  background-color: #f5e9d5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 4vw 0;
-}
-
-.main-message {
-  font-family: 'Nothing You Could Do', cursive;
-  text-align: center;
-  color: #447604;
-}
-
-.calf {
-  width: 50vw;
-  border-radius: 50%;
-  display: block;
-  box-shadow: 10px 10px 50px #8c8c8c;
-}
-
-.secondary-message-parent {
-  background: rgba(68, 119, 4, 0.85);
-  text-align: center;
-  color: #f5e9d5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 10vw 5vw 10vw;
-}
-
-.cream {
-  color: #f5e9d5;
-}
-
-
-
-/* SLIDESHOW */
-
-.mySlides {
-  display: none;
-}
-
-/* .slide-show-container img {
-  vertical-align: middle;
-} */
-
-/* Slideshow container */
-.slideshow-container {
-  width: 100%;
-  position: relative;
-  margin: auto;
-}
-
-.mySlides img {
-  height: 400px;
-  width: auto;
-  object-fit: cover; /*this crops the photos to keep dimensions */
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #010101;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active_dot {
-  background-color: #464545;
-}
-
-.mySlides img {
-  height: 400px;
-  width: auto;
-  object-fit: cover; /*this crops the photos to keep dimensions */
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-/* end of slideshow */
-
-.tertiary-message-parent {
-  padding: 0 10vw 5vw 10vw;
-  background-color: #f5e9d5;
-  text-align: center;
-}
-
-.fading {
-  animation: fade 2s linear;
-}
-
-@keyframes fading {
-  0% { opacity: 0;}
-  100% { opacity: 1;}
-}
-
-#dot_indicator {
-  display: none;
-}
 
 /* =========================
           ABOUT
@@ -582,7 +591,8 @@ textarea:focus {
 
 
 .about-paragraph {
-  padding: 0 10vw 2vw 10vw;
+  padding: 0 10vw 5vw 10vw;
+  text-align: center;
 }
 
 .wide-image {
@@ -611,20 +621,14 @@ textarea:focus {
                         MEDIA QUERIES
 =========================================================*/
 
-@media (min-width: 1200px) {
-  .about-paragraph {
-    padding-right: 2vw;
+@media (min-width: 700px) {
+
+
+  .mySlides img {
+    height: 550px;
   }
 
-  #about-container {
-    flex-direction: row;
-  }
 
-  .wide-image {
-    width: auto;
-    height: 35vw;
-    margin-right: 10vw;
-  }
 
   footer {
     clear: both;
@@ -636,17 +640,13 @@ textarea:focus {
   /* contact page */
 
   .contactWrapper {
-    padding: 0 10vw;
-}
+    padding: 0 15vw;
+  }
+
   form {
     height: 40vw;
     min-height: 700px;
     margin-right: 4vw;
-  }
-
-  #flex {
-    flex-direction: row;
-    flex-wrap: nowrap;
   }
 
   #msg {
@@ -682,17 +682,14 @@ textarea:focus {
     flex-wrap: nowrap;
     align-items: center;
     padding: 0 1vw;
-
   }
-
-
 
   nav ul li a {
     font-family: 'Nothing You Could Do', cursive;
     font-weight: 500;
     padding: .2rem 4vw .2rem .2rem;
     color: #f5e9d5;
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     cursor: pointer;
     border-bottom: 2px solid #f5e9d5;
     border-top: 3px solid #f5e9d5;
@@ -702,10 +699,9 @@ textarea:focus {
     -moz-transition-duration: 1s;
     -o-transition-duration: 1s;
     transition-duration: 1s;
-
     }
 
-  nav ul li a:hover {
+    nav ul li a:hover {
     color: #663b08;
     padding-left: 4vw;
     background-color: rgba(249, 249, 249);
@@ -715,59 +711,44 @@ textarea:focus {
           transform: scale(1.25);
     }
 
+    .video-container img {
+      display: none;
+    }
+
+    .video-container video {
+      width: 100%;
+      display: block;
+      height: 100%;
+      object-fit: cover;
+    }
+
   /* =========================
-        HOME PAGE
+          HOME PAGE
   ===========================*/
 
-  #video-container {
-     width: 100%;
-     height: 700px;
-     overflow: hidden;
-     position: relative;
+  .video-container {
+    height: 100vh;
+    overflow: hidden;
   }
 
   #circle-parent {
     flex-direction: row;
   }
 
-.circle-text {
-  top: 30%;
-  font-size: 1.5vw;
-}
-
-  poster,
-  video {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    object-fit: cover;
-
+  .circle-text {
+    top: 30%;
+    font-size: 1.5vw;
   }
 
-
-  /* =========================
-        OUR PRODUCT
-  ===========================*/
-
-  .calf {
-    width: 30vw;
+  poster {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .secondary-message-parent,
   .tertiary-message-parent {
-    padding: 0 10vw 5vw 10vw;
-  }
-
-  #slideshow {
-    height: 35vw;
-  }
-
-  #slideshow img {
-
+    padding: 3vw 10vw 5vw 10vw;
   }
 
   .tighter {
@@ -778,26 +759,48 @@ textarea:focus {
     width: 100vw; /* for some reason this is necessary to keep the slideshow from covering up the "How it Works" section. (I don't know why it does that because nothing is positioned absolutely...) */
   }
 
-  .mySlides img {
-    height: 700px;
-    width: auto;
-    object-fit: cover; /*this crops the photos to keep dimensions */
-  }
-
-
   /* =========================
-        CONTACT
+        ABOUT
   ===========================*/
 
-  form {
+  .wide-image {
+    width: 60vw;
+  }
+
+}
+
+@media (min-width: 1400px) {
+
+  .about-paragraph {
+    padding: 0 2vw 0 2vw;
+  }
+
+  #about-container {
+    flex-direction: row;
+    align-items: center;
+    padding: 0 15vw 5vw;
+  }
+
+  .about-paragraph {
+    margin: 40px;
+    padding: 30px;
+    border-top: 2px solid #447604;
+    border-bottom: 2px solid #447604;
+  }
+
+  .wide-image {
+    width: auto;
     height: 25vw;
-    min-height: 500px;
-    margin-bottom: 0;
   }
 
   #flex {
     flex-direction: row;
     flex-wrap: nowrap;
+  }
+  form {
+    height: 30vw;
+    min-height: 600px;
+    margin-bottom: 0;
   }
 
   #msg {
