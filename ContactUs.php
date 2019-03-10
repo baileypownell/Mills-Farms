@@ -78,7 +78,7 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="author" content="Bailey Pownell">
     <title>Mills Farms</title>
-    <meta name="description" content="Beef farm in Cass County, Indiana.">
+    <meta name="description" content="Beef farm in Bucks County, Pennsylvania.">
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="mills.css">
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Nothing+You+Could+Do" rel="stylesheet">
