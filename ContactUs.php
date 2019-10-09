@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
   $mail->Port=587;
   $mail->SMTPAuth=true;
   $mail->SMTPSecure='tls';
-  $mail->Password='Believer323';
+  $mail->Password='CENSORED';
 
   $mail->setFrom($_POST['user_email']);
   $mail->addAddress($mills_email);
